@@ -9,10 +9,10 @@ export function createISS() {
     const dracoLoader = new DRACOLoader();
 
     let issMesh = null;
-    dracoLoader.setDecoderPath('/draco/');
+    dracoLoader.setDecoderPath(import.meta.env.BASE_URL + 'draco/');
     modelLoader.setDRACOLoader(dracoLoader);
 
-    modelLoader.load('/models/International Space Station (ISS) (B).glb', (gltf) => {
+    modelLoader.load(import.meta.env.BASE_URL + 'models/International Space Station (ISS) (B).glb', (gltf) => {
         issMesh = gltf.scene;
         issMesh.scale.set(0.05, 0.05, 0.05);
         ISSGroup.add(issMesh);

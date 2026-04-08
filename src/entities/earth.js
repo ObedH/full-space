@@ -5,8 +5,8 @@ export function createEarth() {
     const earthGeometry = new THREE.SphereGeometry(5, 64, 64);
     const textureLoader = new THREE.TextureLoader();
     const earthMaterial = new THREE.MeshStandardMaterial({
-        map: textureLoader.load("/textures/2k_earth_nightmap.jpg"),
-        bumpMap: textureLoader.load("/textures/8081_earthbump2k.jpg"),
+        map: textureLoader.load(import.meta.env.BASE_URL + "textures/2k_earth_nightmap.jpg"),
+        bumpMap: textureLoader.load(import.meta.env.BASE_URL + "textures/8081_earthbump2k.jpg"),
         bumpScale: 20,
         roughness: 0.8
     });
